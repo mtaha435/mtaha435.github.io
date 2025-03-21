@@ -1,0 +1,42 @@
+div{
+    height: 50px;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: gold;
+    font-family:'Tangerine', serif;
+    font-size: 40px;
+    }
+
+div.Socials{
+    display:flex;
+    gap: 10px;
+}
+.Socials a:hover img{
+    filter: saturate(4);
+}
+img.linkedin_icon{
+    height: 75%;
+    margin-top:15%;
+}
+img.github_icon{
+    height: 100%;
+    margin:auto;
+}
+img.mail_icon{
+    height: 100%;
+    margin:auto
+}
+
+a:link{
+    color:aliceblue;
+    text-decoration:none;
+}
+a:hover{
+    color:aqua;
+}
+body{
+    margin: 0;
+}
+
