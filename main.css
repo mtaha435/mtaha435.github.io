@@ -6,6 +6,9 @@ html{
     padding: 0;
     box-sizing: border-box;
   }
+[id]{
+    scroll-margin-top: 4rem;
+}
 .header{
     position:fixed;
     width: 100%;
@@ -19,27 +22,20 @@ html{
     font-size: 40px;
     padding: 0 40px;
     }
-a{color:goldenrod; text-decoration: none;} a:hover{color:gold}
+a{
+    color:goldenrod; text-decoration: none;} a:hover{color:gold}
 div.Socials{
     margin-left:64%;
     display:flex;
-    gap: 10px;
-}
+    gap: 10px;}
 .Socials a:hover img{
-    filter: saturate(4);
-}
+    filter: saturate(4);}
 img.linkedin_icon{
     height: 36px;
-    margin-top:13px;
-}
+    margin-top:13px;}
 img.github_icon,img.mail_icon{
     height: 50px;
-    margin-top: 7px;
-}
-body{
-
-    margin: 0;
-}
+    margin-top: 7px;}
 
 #home{
     background-image: url(icons/background.jpg);
@@ -56,14 +52,64 @@ body{
     transition: opacity 1.5s ease-in-out;
     font-size:80px;
 }
+
 #about_section{
     background-image: url(icons/background.jpg);
     background-size:cover;
     height:100vh;
 }
+#about_section h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* stack h1 and p vertically */
+    text-align: center;
+    font-size:50px;
+}
+#about_section p{
+    font-size:30px;
+}
+
 #project_section{
     background-image: url(icons/background.jpg);
     background-size:cover;
     height:100vh;
 }
+#project_section h1{
+    font-size:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* stack h1 and p vertically */
+    text-align: center;
+}
+.project_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+.project_card{
+    color:rgba(255, 255, 255, 0.8);
+    background-color: #222;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
 #copyright_section{background-color:black;text-indent:70%;}
+
+.horizontal_bar {
+    width: 100%;
+    height: 2px;
+    background-color: gold;
+    margin-top: 2px;
+  }
