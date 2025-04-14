@@ -1,6 +1,11 @@
 html{
     scroll-behavior: smooth;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 .header{
     position:fixed;
     width: 100%;
@@ -32,11 +37,13 @@ img.github_icon,img.mail_icon{
     margin-top: 7px;
 }
 body{
+
     margin: 0;
 }
 
 #home{
-    background-color: rgba(0, 0, 0, 0);
+    background-image: url(icons/background.jpg);
+    background-size:cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,8 +57,13 @@ body{
     font-size:80px;
 }
 #about_section{
+    background-image: url(icons/background.jpg);
+    background-size:cover;
     height:100vh;
 }
 #project_section{
+    background-image: url(icons/background.jpg);
+    background-size:cover;
     height:100vh;
 }
+#copyright_section{background-color:black;text-indent:70%;}
