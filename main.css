@@ -40,3 +40,15 @@ body{
     margin: 0;
 }
 
+#salam{
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+#hello_text{
+    margin:auto;
+    opacity:1;
+    transition: opacity 1.5s ease-in-out;
+}
