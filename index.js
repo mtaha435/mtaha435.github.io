@@ -7,10 +7,10 @@ function animate_greeting(){
     setTimeout(()=>{
         i = (i + 1) % greetings.length;
         if(i==1){
-            textElement.style.fontSize="29px";
+            textElement.style.fontSize="69px";
         }
         else{
-            textElement.style.fontSize="40px";
+            textElement.style.fontSize="80px";
         }
         textElement.textContent = greetings[i];
         textElement.style.opacity = 1;
