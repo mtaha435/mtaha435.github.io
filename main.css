@@ -21,13 +21,16 @@ html{
     font-family:'Tangerine', serif;
     font-size: 40px;
     padding: 0 40px;
+    z-index: 1000;
     }
 a{
     color:goldenrod; text-decoration: none;} a:hover{color:gold}
 div.Socials{
-    margin-left:64%;
+    position: absolute;
+    right: 40px;
     display:flex;
-    gap: 10px;}
+    gap: 10px;
+}
 .Socials a:hover img{
     filter: saturate(4);}
 img.linkedin_icon{

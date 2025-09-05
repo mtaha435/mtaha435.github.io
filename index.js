@@ -1,24 +1,72 @@
-//greeting fade in/out
+//greeting fade in/out with letter-by-letter animation
 const greetings = ["Hello", "مرحبا", "Hola", "Bonjour", "Ciao"]
 let i = 0;
 const textElement = document.getElementById("hello_text");
-function animate_greeting(){
-    textElement.style.opacity = 0;
-    setTimeout(()=>{
-        i = (i + 1) % greetings.length;
-        if(i==1){
-            textElement.style.fontSize="69px";
-        }
-        else{
-            textElement.style.fontSize="80px";
-        }
-        textElement.textContent = greetings[i];
-        textElement.style.opacity = 1;
-    }, 1000);
 
+function animateLetters(text, fontSize) {
+    textElement.innerHTML = ''; // Clear current text
+    textElement.style.fontSize = fontSize;
+    
+    // Create spans for each letter
+    const letters = text.split('').map(letter => {
+        const span = document.createElement('span');
+        span.textContent = letter === ' ' ? '\u00A0' : letter; // Use non-breaking space
+        span.style.opacity = '0';
+        span.style.transition = 'opacity .3s ease-in';
+        return span;
+    });
+    
+    // Add all letter spans to the text element
+    letters.forEach(span => textElement.appendChild(span));
+    
+    // Animate each letter with a delay
+    letters.forEach((span, index) => {
+        setTimeout(() => {
+            span.style.opacity = '1';
+        }, index * 100); // 100ms delay between each letter
+    });
 }
-textElement.style.opacity=1;
-setInterval(animate_greeting,3000);
+
+function fadeOutLetters() {
+    return new Promise((resolve) => {
+        const currentLetters = textElement.querySelectorAll('span');
+        
+        if (currentLetters.length === 0) {
+            resolve();
+            return;
+        }
+        
+        // Fade out letters from right to left (reverse order)
+        currentLetters.forEach((span, index) => {
+            const reverseIndex = currentLetters.length - 1 - index;
+            setTimeout(() => {
+                span.style.opacity = '0';
+            }, reverseIndex * 80); // 80ms delay for faster fade-out
+        });
+        
+        // Resolve promise after all letters have started fading
+        setTimeout(() => {
+            resolve();
+        }, currentLetters.length * 80 + 300); // Extra time for last letter to fade
+    });
+}
+
+async function animate_greeting(){
+    // Fade out current letters one by one
+    await fadeOutLetters();
+    
+    // Move to next greeting
+    i = (i + 1) % greetings.length;
+    const fontSize = i === 1 ? "69px" : "80px";
+    
+    // Start letter-by-letter fade-in animation for new greeting
+    animateLetters(greetings[i], fontSize);
+}
+
+// Initialize with first greeting
+animateLetters(greetings[0], "80px");
+textElement.style.opacity = 1;
+setInterval(animate_greeting, 4000); // Increased interval to accommodate letter animation
 
 // Animation function for about section
 let aboutAnimationTriggered = false;
