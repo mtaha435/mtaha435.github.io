@@ -1,2 +1,6 @@
-# _config.yml
+# _config.yml - GitHub Pages configuration
 source: .
+plugins: []
+markdown: kramdown
+highlighter: rouge
+theme: null
