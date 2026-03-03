@@ -1,58 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mo's site</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Mohamed Taha</title>
+
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 </head>
+<body>
 
-<body style="background-color: rgba(0, 0, 0, 0.825);">
-    <div class="header">
-        <a class="Home" href="#home">Home</a>
-        <a class="About" href="#about_section" style="margin-left: 30px;">About</a>
-        <a class="Projects" href="#project_section" style="margin-left: 30px;">Projects</a>
-        <div class="Socials">
-        <a href="https://www.linkedin.com/in/mohamed-taha-gsu/">
-            <img class="linkedin_icon"  src="./icons/linkedin_icon.png"></a>
-        <a href="https://github.com/mtaha435">
-            <img class="github_icon" src="./icons/github_logo.png"></a>
-        <a href="mailto:mataha435@gmail.com">
-            <img class="mail_icon" src="./icons/mail_icon.png"></a>
-        </div>
+<nav id="sidenav">
+  <div class="logo">MT<span>.</span></div>
+  <ul>
+    <li><a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i>Home</a></li>
+    <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i>Skills</a></li>
+    <li><a href="#projects" class="nav-link"><i class="fa-solid fa-layer-group"></i>Projects</a></li>
+    <li><a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i>Contact</a></li>
+  </ul>
+  <div class="nav-footer">© 2026 Mohamed Taha</div>
+</nav>
 
-    </div> 
+<main>
 
-    <section id="home">
-        <span id="hello_text">Hello</span>
-        <button id="scroll-button" class="scroll-down-btn">
-            <span>See More</span>
-            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-            </svg>
-        </button>
-    </section>
+<section id="hero">
+  <div class="hero-name">Mohamed <span>Taha</span></div>
+  <div class="hero-tagline">Software Engineer · Full Stack Developer · CS @ Georgia State</div>
+  <div class="hero-meta">Atlanta, GA · US Citizen · 3.5 GPA · President's & Dean's List 4×</div>
+  <div class="social-row">
+    <a class="social-btn" href="mailto:mataha435@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a>
+    <a class="social-btn" href="https://linkedin.com/in/mataha1" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+    <a class="social-btn" href="https://github.com/mtaha435" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+    <a class="social-btn" href="tel:2564687332"><i class="fa-solid fa-phone"></i>256-468-7332</a>
+  </div>
+</section>
 
-    <section id="about_section">
-        <h1 id="about-title" style="color:rgba(255, 255, 255, 0.8)">Hey! I'm Mohamed <span id="wave-emoji" class="wave-emoji">👋</span></h1><br><br><br>
-        <p id="about-paragraph" style="color:rgba(255, 255, 255, 0.8); margin-left: 10%;">I'm a computer science major at Georgia State University.<br> I love to build efficient scalable solutions to real problems whether<br> that be through automation, optimization, or innovation.<br>Check out some of my projects below!</p>
-    </section>
+<div class="divider"></div>
 
-    <section id="project_section">
-        <h1 style="color:rgba(255, 255, 255, 0.8);">Projects</h1>
-        <div class="project_grid">
-            <div class="project_card"><h3>Employee Management System</h3> <div class="horizontal_bar"></div> <p>Java, SQL<br><br>Easy to manage database using a Command-Line Interface.</p><br><a href="https://github.com/mtaha435/EmployeeManagementSystem">code</a></div>
-            <div class="project_card"><h3>GSU Class Resgistration Bot</h3><div class="horizontal_bar"></div> <p>Python,Tkinter<br><br>Automatically register for your GSU classes using this selenium/Tkinter based python script.</p><br><a href="https://github.com/mtaha435/GSU-Registration-Bot">code</a></div>
-            <div class="project_card"><h3>The World</h3> <div class="horizontal_bar"></div> <p>javascript,three.js<br><br>*In progress* <br>3d interactive globe with data</p><br><a href="https://github.com/mtaha435/globe">code</a></div>
-            
-        </div>
-    </section>
+<section id="skills">
+  <div class="section-label">What I work with</div>
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-grid" id="skills-grid"></div>
+</section>
 
-    <section id="copyright_section">
-        <h4 style="color:rgba(240, 248, 255, 0.863); text-align: center;">2025-present Mohamed Taha. All Rights Reserved</h4>
-    </section>
+<div class="divider"></div>
 
-    <script src="index.js"></script>
+<section id="projects">
+  <div class="section-label">Things I've built</div>
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid" id="projects-grid"></div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact">
+  <div class="section-label">Get in touch</div>
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-cards">
+    <a class="contact-card" href="mailto:mataha435@gmail.com">
+      <i class="fa-solid fa-envelope"></i>
+      <div>
+        <div class="cc-label">Email</div>
+        <div class="cc-val">mataha435@gmail.com</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-icon" id="modal-icon"></div>
+      <div>
+        <h3 id="modal-title"></h3>
+        <div id="modal-cat" class="modal-sub"></div>
+      </div>
+    </div>
+    <textarea id="modal-notes"></textarea>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="close-btn">Close</button>
+      <button class="btn btn-primary" id="save-btn">Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
