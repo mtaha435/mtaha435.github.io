@@ -1,14 +1,14 @@
 const grid = document.getElementById('skills-grid');
 const pg = document.getElementById('projects-grid');
 
-let activeSkill = null;
+let activeSkill = null; 
 
 function renderSkills() {
-  grid.innerHTML = '';
+  grid.innerHTML = ''; 
   
   skills.forEach(s => {
     const d = document.createElement('div');
-    // Add an 'active' class if this skill is currently selected
+    // Ensure this class matches your CSS for the "highlighted" look
     d.className = `skill-chip ${activeSkill === s.name ? 'active-skill' : ''}`;
     d.innerHTML = `
       <i class="${s.icon}" style="color:${s.color}"></i>
@@ -26,11 +26,10 @@ function renderSkills() {
 }
 
 function renderProjects() {
-  pg.innerHTML = '';
+  pg.innerHTML = ''; 
   
-  let sortedProjects = projects;
+  let sortedProjects = [...projects]; // Create a copy to sort
 
-  // If a skill is selected, bring matching projects to the top
   if (activeSkill) {
     const matched = projects.filter(p => p.stack.includes(activeSkill));
     const unmatched = projects.filter(p => !p.stack.includes(activeSkill));
@@ -40,17 +39,14 @@ function renderProjects() {
   sortedProjects.forEach(p => {
     const isMatched = activeSkill && p.stack.includes(activeSkill);
     
-    // Highlight the specific tag inside the project if it matches
     const tags = p.stack.map(t => 
       `<span class="tag ${t === activeSkill ? 'active-tag' : ''}">${t}</span>`
     ).join('');
 
-    // Change div to an anchor tag to make the whole card clickable
     const card = document.createElement('a');
-    card.href = p.github;
-    card.target = "_blank"; // Opens repo in a new tab
+    card.href = p.github || '#'; // Fallback to # if link is missing
+    card.target = "_blank";
     card.className = `project-card ${isMatched ? 'highlighted-project' : ''}`;
-    // Inline styles to prevent the anchor tag from looking like a standard text link
     card.style.textDecoration = 'none'; 
     card.style.color = 'inherit';
     card.style.display = 'block';
