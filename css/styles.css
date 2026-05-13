@@ -121,3 +121,47 @@
   .contact-card i{font-size:1.3rem;color:var(--accent)}
   .contact-card .cc-label{font-size:.72rem;color:var(--sub);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
   .contact-card .cc-val{font-size:.88rem;font-weight:600}
+/* --- Hover Dropdown Styles --- */
+.dropdown-content {
+  display: none;
+  list-style: none;
+  padding-left: 2rem; /* Indent under 'More' */
+  margin-top: 0.5rem;
+}
+
+.nav-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.sub-link {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* --- Active Skill & Project Highlights --- */
+.skill-chip.active-skill {
+  border: 2px solid #007bff; /* Example blue highlight */
+  background-color: rgba(0, 123, 255, 0.1); /* Slight tint */
+  transform: scale(1.05); /* Slight pop out effect */
+}
+
+.project-card.highlighted-project {
+  border: 2px solid #007bff;
+  background-color: rgba(0, 123, 255, 0.05);
+}
+
+.tag.active-tag {
+  background-color: #007bff; /* Highlights the specific tag text */
+  color: white;
+}
+
+/* Make sure project cards look clickable on hover */
+.project-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}

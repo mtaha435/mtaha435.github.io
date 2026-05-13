@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Mohamed Taha</title>
-
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌚</text></svg>">
   <link rel="stylesheet" href="css/styles.css"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 </head>
@@ -17,6 +17,15 @@
     <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i>Skills</a></li>
     <li><a href="#projects" class="nav-link"><i class="fa-solid fa-layer-group"></i>Projects</a></li>
     <li><a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i>Contact</a></li>
+    
+    <!-- New Hover Dropdown -->
+    <li class="nav-dropdown">
+      <a href="#" class="nav-link"><i class="fa-solid fa-ellipsis"></i>More</a>
+      <ul class="dropdown-content">
+        <li><a href="pages/courses.html" class="nav-link sub-link">Courses</a></li>
+        <li><a href="pages/experience.html" class="nav-link sub-link">Experience</a></li>
+      </ul>
+    </li>
   </ul>
   <div class="nav-footer">© 2026 Mohamed Taha</div>
 </nav>
@@ -25,8 +34,8 @@
 
 <section id="hero">
   <div class="hero-name">Mohamed <span>Taha</span></div>
-  <div class="hero-tagline">Software Engineer · Full Stack Developer · CS @ Georgia State</div>
-  <div class="hero-meta">Atlanta, GA · US Citizen · 3.5 GPA · President's & Dean's List 4×</div>
+  <div class="hero-tagline">Software Engineer · Full Stack Development · AI & Machine Learning · CS & DS @ Georgia State</div>
+  <div class="hero-meta">Atlanta, GA · US Citizen · 3.6 GPA · President's & Dean's List 5×</div>
   <div class="social-row">
     <a class="social-btn" href="mailto:mataha435@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a>
     <a class="social-btn" href="https://linkedin.com/in/mataha1" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
@@ -68,24 +77,6 @@
 </section>
 
 </main>
-
-<!-- Modal -->
-<div class="modal-overlay" id="modal">
-  <div class="modal">
-    <div class="modal-header">
-      <div class="modal-icon" id="modal-icon"></div>
-      <div>
-        <h3 id="modal-title"></h3>
-        <div id="modal-cat" class="modal-sub"></div>
-      </div>
-    </div>
-    <textarea id="modal-notes"></textarea>
-    <div class="modal-actions">
-      <button class="btn btn-ghost" id="close-btn">Close</button>
-      <button class="btn btn-primary" id="save-btn">Save</button>
-    </div>
-  </div>
-</div>
 
 <script src="js/data.js"></script>
 <script src="js/script.js"></script>
