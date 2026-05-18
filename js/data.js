@@ -36,7 +36,7 @@ const projects = [
     stack:['Python','Matplotlib','Pandas','NumPy','TensorFlow','Scikit-Learn'],
     date:'2026',
     desc:'Built Traditional ML models (Logistic Regression, Random Forest, Kernel SVM) and Deep Learning Models (1D & 2D CNN) to classify imagined movement via EEG and EOG signals.',
-    github: 'https://github.com/orgs/Cloud-Disaster-Recovery-Platform/repositories'
+    github: 'https://github.com/mtaha435/ML-Project'
   },
   {
     title:'GSU Registration Script',
