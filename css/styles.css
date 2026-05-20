@@ -165,3 +165,87 @@
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
+/* --- Subpage Layout Adjustments --- */
+.page-content {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+}
+.page-header {
+  margin-bottom: 2rem;
+}
+/* --- Horizontal Scrolling Containers --- */
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-top: 0.5rem;
+  /* Enables smooth snap scrolling */
+  scroll-snap-type: x mandatory; 
+  -webkit-overflow-scrolling: touch;
+}
+/* Custom, thinner scrollbar for the horizontal lists */
+.horizontal-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.horizontal-scroll::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05); 
+  border-radius: 10px;
+}
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2); 
+  border-radius: 10px;
+}
+.horizontal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.4); 
+}
+
+/* --- Course Card Styling --- */
+.course-card {
+  /* Prevents cards from shrinking, fixes width to 320px */
+  flex: 0 0 320px; 
+  scroll-snap-align: start;
+  
+  /* Styling to match your existing project cards */
+  background: #ffffff; /* Use transparent or dark grey if you have a dark theme */
+  border: 1px solid #eaeaea; 
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.course-code {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #007bff; /* Use your theme accent color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.course-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333; /* Use white if dark theme */
+}
+
+.course-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.course-desc {
+  font-size: 0.95rem;
+  color: #666; /* Use light grey if dark theme */
+  line-height: 1.5;
+  margin-top: auto; /* Pushes description to fill remaining space */
+}
