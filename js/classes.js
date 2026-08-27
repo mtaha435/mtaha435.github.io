@@ -1,4 +1,11 @@
-const courses = [
+const ms_courses = [
+    {name: 'Spatial Scientific Databases', code: 'CSC8713', topics: '', desc: ''},
+    {name: 'Statistics', code: 'MATH6751', topics: '', desc: ''},
+    {name: 'Ethics for DS', code: 'CSC8902', topics: '', desc: ''},
+    {name: 'Data Mining', code: 'CSC6740', topics: '', desc: ''},
+]
+
+const bs_courses = [
     //Spring '26
     {name: 'Machine Learning', code: 'CSC4850 – Spring \'26', topics: ['Traditional ML', 'Neural Networks', 'Gramian Angular Fields'], desc: 'Heavy math based class. We learned the theory and formulas behind point estimation, regression, classification, etc. I transformed EEG signals(dataset of microvolt signals) into a Gramian Angular Field, transforming 1D data into an image classifier problem.'},
     {name: 'Intro to Data Science', code: 'CSC4780 – Spring \'26', topics: ['matplotlib','pandas','numpy','seaborn','snowflake', 'scikit-learn'], desc: 'Covered basic data exploration and libraries for analytics/visualization. Highly conceptual for ML algorithms. (Wish I took this before data mining)'},
@@ -42,17 +49,32 @@ const codepath_courses = [
 ];
 
 function renderCourses() {
-    const uniGrid = document.getElementById('uni-courses-grid');
+    const msGrid = document.getElementById('ms-courses-grid')
+    const bsGrid = document.getElementById('bs-courses-grid');
     const cpGrid = document.getElementById('codepath-courses-grid');
-
-    // Render University Courses
-    courses.forEach(c => {
+    // Render MS University Courses
+    ms_courses.forEach(c => {
+        const topicsHtml = c.topics && c.topics.length > 0
+            ? c.topics.map(t=> `<span class="tag">${t}</span>`).join('')
+            : '';
+            
+        msGrid.innerHTML += `
+            <div class="course-card">
+                <div class="course-code">${c.code}</div>
+                <div class="course-title">${c.name}</div>
+                <div class="course-topics">${topicsHtml}</div>
+                <div class="course-desc">${c.desc}</div>
+            </div>
+    `;
+    })
+    // Render BS University Courses
+    bs_courses.forEach(c => {
         // Build the topics tags if they exist
         const topicsHtml = c.topics && c.topics.length > 0 
             ? c.topics.map(t => `<span class="tag">${t}</span>`).join('') 
             : '';
 
-        uniGrid.innerHTML += `
+        bsGrid.innerHTML += `
             <div class="course-card">
                 <div class="course-code">${c.code}</div>
                 <div class="course-title">${c.name}</div>
