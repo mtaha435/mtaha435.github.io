@@ -11,7 +11,14 @@
 <body>
 
 <nav id="sidenav">
-  <div class="logo">MT<span>.</span></div>
+  <div class="sidebar-header">
+    <div class="logo">MT<span>.</span></div>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+
   <ul>
     <li><a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i>Home</a></li>
     <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i>Skills</a></li>
@@ -80,5 +87,32 @@
 
 <script src="js/data.js"></script>
 <script src="js/script_data.js"></script>
+<script>
+  // Theme toggle functionality
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
+
+  // Check for saved theme preference or use system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    htmlElement.setAttribute('data-theme', 'dark');
+    themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isDark = htmlElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      htmlElement.removeAttribute('data-theme');
+      themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      localStorage.setItem('theme', 'light');
+    } else {
+      htmlElement.setAttribute('data-theme', 'dark');
+      themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+</script>
 </body>
 </html>

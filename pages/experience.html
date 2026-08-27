@@ -1,1 +1,71 @@
-<h1>Will Update Soon!!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Experience - Mohamed Taha</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌚</text></svg>">
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav id="sidenav">
+  <div class="sidebar-header">
+    <div class="logo">MT<span>.</span></div>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+  <ul>
+    <li><a href="../index.html" class="nav-link"><i class="fa-solid fa-arrow-left"></i>Back to Home</a></li>
+  </ul>
+  <div class="nav-footer">© 2026 Mohamed Taha</div>
+</nav>
+
+<main class="page-content">
+  <div class="page-header">
+    <h1 class="hero-name" style="font-size: 2.5rem;">Professional <span>Experience</span></h1>
+    <p class="hero-meta">A timeline of my work experience and internships.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <section id="experience-section">
+    <h2 class="section-title">Experience</h2>
+    <div class="horizontal-scroll" id="experience-grid"></div>
+  </section>
+
+</main>
+
+<script src="../js/experience.js"></script>
+<script>
+  // Theme toggle functionality
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
+
+  // Check for saved theme preference or use system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    htmlElement.setAttribute('data-theme', 'dark');
+    themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isDark = htmlElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      htmlElement.removeAttribute('data-theme');
+      themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      localStorage.setItem('theme', 'light');
+    } else {
+      htmlElement.setAttribute('data-theme', 'dark');
+      themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+</script>
+</body>
+</html>
