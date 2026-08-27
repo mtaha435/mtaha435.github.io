@@ -34,6 +34,12 @@ I developed specialized scraping solutions for the remaining websites, using Sel
 
 After completing the scraping work ahead of schedule, I transitioned to frontend development. I worked with TypeScript, React, Next.js, and Drizzle ORM to build the frontend for an email templating platform. The application provided users with customizable email templates through an interface inspired by Gmail, while adding functionality specifically designed around creating, managing, and using reusable templates. I also used Drizzle ORM to support database seeding and development of the application's data layer.`,
         technologies: ['Python', 'Selenium', 'BeautifulSoup', 'Regex', 'TypeScript', 'React', 'Next.js', 'Drizzle ORM']
+    },
+    {
+        date: '2020 – 2021',
+        position: 'Pizza boy — Marco\'s Pizza',
+        description: `Humble beginnings...`,
+        technologies: ['Phone', 'Dough', 'Register', 'Cheese']
     }
 ];
 
